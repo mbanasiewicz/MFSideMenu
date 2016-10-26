@@ -18,18 +18,18 @@ typedef enum {
     MFSideMenuPanModeDefault = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu
 } MFSideMenuPanMode;
 
-typedef enum {
+typedef NS_ENUM(NSInteger, MFSideMenuState) {
     MFSideMenuStateClosed, // the menu is closed
     MFSideMenuStateLeftMenuOpen, // the left-hand menu is open
     MFSideMenuStateRightMenuOpen // the right-hand menu is open
-} MFSideMenuState;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, MFSideMenuStateEvent) {
     MFSideMenuStateEventMenuWillOpen, // the menu is going to open
     MFSideMenuStateEventMenuDidOpen, // the menu finished opening
     MFSideMenuStateEventMenuWillClose, // the menu is going to close
     MFSideMenuStateEventMenuDidClose // the menu finished closing
-} MFSideMenuStateEvent;
+};
 
 
 @interface MFSideMenuContainerViewController : UIViewController<UIGestureRecognizerDelegate>
@@ -38,7 +38,7 @@ typedef enum {
                                                   leftMenuViewController:(id)leftMenuViewController
                                                  rightMenuViewController:(id)rightMenuViewController;
 
-@property (nonatomic, strong) id centerViewController;
+@property (nonatomic, strong) UIViewController *centerViewController;
 @property (nonatomic, strong) UIViewController *leftMenuViewController;
 @property (nonatomic, strong) UIViewController *rightMenuViewController;
 
