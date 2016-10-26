@@ -127,8 +127,8 @@ typedef enum {
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    self.contentViewController.view.frame = self.view.bounds;
-    
+    self.centerViewController.view.frame = self.view.bounds;
+
     if([self respondsToSelector:@selector(topLayoutGuide)]) {
         UIEdgeInsets insets = UIEdgeInsetsMake([self.topLayoutGuide length], 0, 0, 0);
         if(_leftSideMenuViewController &&
